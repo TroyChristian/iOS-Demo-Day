@@ -35,27 +35,61 @@
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    `Mutliple Selection on a CollectionView was interesting because of the code paths that diffrent combinations open up for exploration.
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+   Making coreData populate my views. Usually I use structs that I genereate along side coreData to update views and keep them both consistent in the background. Taking this new approach took more research and learning more about / relearning about FetchRequests, Predicates. 
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+These functions belong to a feature in progress that will make selecting multiple categories for one entry seamless.
+
+   //    func multipleCategories ()   {
+//        let alert = UIAlertController(title: "Multiple Categories Selected: How much did you spend on \(chosenCategories[0])", message: "How much did you spend on your first selected category", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title:"Cancel", style: .cancel, handler: nil))
+//
+//        alert.addTextField { (textField) in
+//            textField.placeholder = "\(self.chosenCategories[0])"
+//
+//        }
+//
+//        alert.addAction(UIAlertAction(title: "Enter Amount", style: .default, handler: { (action) in
+//
+//            if let amount = (alert.textFields?.first?.text) {
+//                guard let doubleAmount = Double(amount) else {return}
+//                self.knownAmountofFirstPurchase = doubleAmount
+//            } else { print("Returning on line 75"); return}
+//        }))
+//        self.present(alert, animated: true, completion:nil)
+//        print("Inside MultipleCategories knownAmounofFirstPurchase: \(knownAmountofFirstPurchase)")
+//
+//    }
+//
+//
+//    func multipleCategoriesPartTwo(){
+//        print("Inside MultipleCategoriesPartTwo knownAmounofFirstPurchase: \(knownAmountofFirstPurchase)")
+//        entryController.createEntry(amountSpent: knownAmountofFirstPurchase ?? 2.22, category: chosenCategories[0], date: Date(), note: nil)
+//
+//        guard let purchase = (purchaseTextField.text) else { return }
+//        guard let doublePurchase = Double(purchase) else {return}
+//
+//        let totalForSecondCategory =   divideTotalOfTwoCategories(total: doublePurchase, knownAmountOfOneCategory: knownAmountofFirstPurchase ?? 2.22)
+//
+//        entryController.createEntry(amountSpent: totalForSecondCategory, category: chosenCategories[1], date: Date(), note: nil)
+//    }
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+   How many times have you tediously entered the details of a purchase into a checkbook, only to have to manually re-check them for errors later when balancing. This app solves that problem by making purchases easy to track with no learning curve for the software itself. 
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    The ability to easily add custom categories. 
   
 6. What are you future goals?
 
-    `<Your answer here>`
+   Assign more than one category to a purchase and then do the math for the user so they have to enter the least information possible for maximum results. Partly implemented now. 
 
 ## Required Slides (Add your Keynote to your PR)
 
